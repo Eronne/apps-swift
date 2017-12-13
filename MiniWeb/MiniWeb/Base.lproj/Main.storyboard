@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kdx-mM-BWN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MiniWeb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ArH-eb-jVY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="To8-hL-TGA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Icp-Av-NX3"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="To8-hL-TGA" firstAttribute="trailing" secondItem="AlW-GD-KvU" secondAttribute="trailing" id="NZM-7M-22g"/>
+                            <constraint firstItem="AlW-GD-KvU" firstAttribute="bottom" secondItem="To8-hL-TGA" secondAttribute="bottom" id="gGN-Pb-o6z"/>
+                            <constraint firstItem="To8-hL-TGA" firstAttribute="leading" secondItem="AlW-GD-KvU" secondAttribute="leading" id="lWr-dE-rgo"/>
+                            <constraint firstItem="To8-hL-TGA" firstAttribute="top" secondItem="ArH-eb-jVY" secondAttribute="top" id="qbR-oy-wBm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AlW-GD-KvU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7xH-bs-Xxp">
+                        <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem title="&lt;" id="rEm-xT-ZHr">
+                                <connections>
+                                    <action selector="goBack" destination="To8-hL-TGA" id="lXd-dX-URs"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="  &gt;" id="iKF-fC-5aV">
+                                <connections>
+                                    <action selector="goForward" destination="To8-hL-TGA" id="HHt-yF-tX5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="R" id="URX-Hd-sND"/>
+                        </leftBarButtonItems>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="UfP-BG-tzI">
+                            <rect key="frame" x="97.5" y="7" width="180" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" keyboardAppearance="alert" returnKeyType="google" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            <connections>
+                                <action selector="textFieldExited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="CsA-EA-7Oa"/>
+                            </connections>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" id="O5e-2d-pGf">
+                            <view key="customView" contentMode="scaleToFill" id="AzS-Uk-3E9">
+                                <rect key="frame" x="313" y="5.5" width="46" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ClC-na-1iA">
+                                        <rect key="frame" x="-165" y="-317.5" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="indicator" destination="ClC-na-1iA" id="Cgc-gA-Xqy"/>
+                        <outlet property="searchBar" destination="UfP-BG-tzI" id="pJ4-7K-NlU"/>
+                        <outlet property="view" destination="ArH-eb-jVY" id="4pJ-5P-l5d"/>
+                        <outlet property="webView" destination="To8-hL-TGA" id="09f-aM-mo3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mtr-b7-H0Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kdx-mM-BWN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s8K-8c-cQL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5ng-ov-LMp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYd-aQ-sx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="117"/>
+        </scene>
+    </scenes>
+</document>
