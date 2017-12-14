@@ -85,9 +85,9 @@ class ModelController: NSObject, XMLParserDelegate {
         case .Title:
             articles.last!.title = safeConcat(articles.last!.title, with: string)
         case .Chapo:
-            articles.last!.title = safeConcat(articles.last!.permalink, with: string)
+            articles.last!.chapo = safeConcat(articles.last!.permalink, with: string)
         case .Permalink:
-            articles.last!.title = safeConcat(articles.last!.chapo, with: string)
+            articles.last!.permalink = safeConcat(articles.last!.chapo, with: string)
         default:
             break;
         }
