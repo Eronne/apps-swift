@@ -59,11 +59,40 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArticleTableViewCell
 
         let article = modelController.articles[indexPath.row]
-        cell.textLabel!.text = article.title
+        cell.titleLabel!.text = article.title
+        cell.chapoLabel!.text = article.chapo
+        
+        if let image = article.image {
+            cell.photoView!.image = image
+            article.image = nil
+        } else {
+            loadImage(article.imageAdress, forRowAt: indexPath)
+        }
+        
         return cell
+    }
+    
+    func loadImage(_ address: String?, forRowAt indexPath: IndexPath) {
+        if let link = address {
+            if let url = URL(string: link) {
+                DispatchQueue.global(qos: .background).async {
+                    do {
+                        let imageData = try Data(contentsOf: url)
+                        let image = UIImage(data: imageData)
+                        DispatchQueue.main.async {
+                            self.modelController.articles[indexPath.row].image = image
+                            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                        }
+                    }
+                    catch {
+                        print("Error getting Image")
+                    }
+                }
+            }
+        }
     }
 }
 

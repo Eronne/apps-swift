@@ -15,6 +15,7 @@
 		B53A07211FE2A9EE00D119AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53A071F1FE2A9EE00D119AC /* LaunchScreen.storyboard */; };
 		B53A072B1FE2ACFD00D119AC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A072A1FE2ACFD00D119AC /* Article.swift */; };
 		B53A072F1FE2B12900D119AC /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A072E1FE2B12900D119AC /* ModelController.swift */; };
+		B541746A1FE3C9AA00842B38 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54174691FE3C9AA00842B38 /* ArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B53A07221FE2A9EE00D119AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53A072A1FE2ACFD00D119AC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B53A072E1FE2B12900D119AC /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		B54174691FE3C9AA00842B38 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleTableViewCell.swift; path = "Le Monde/ArticleTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +62,10 @@
 		B53A07131FE2A9EE00D119AC /* Le Monde */ = {
 			isa = PBXGroup;
 			children = (
-				B53A072A1FE2ACFD00D119AC /* Article.swift */,
+				B54174681FE3C94500842B38 /* Model */,
 				B53A07141FE2A9EE00D119AC /* AppDelegate.swift */,
+				B54174691FE3C9AA00842B38 /* ArticleTableViewCell.swift */,
 				B53A07161FE2A9EE00D119AC /* MasterViewController.swift */,
-				B53A072E1FE2B12900D119AC /* ModelController.swift */,
 				B53A07181FE2A9EE00D119AC /* DetailViewController.swift */,
 				B53A071A1FE2A9EE00D119AC /* Main.storyboard */,
 				B53A071D1FE2A9EE00D119AC /* Assets.xcassets */,
@@ -71,6 +73,15 @@
 				B53A07221FE2A9EE00D119AC /* Info.plist */,
 			);
 			path = "Le Monde";
+			sourceTree = "<group>";
+		};
+		B54174681FE3C94500842B38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B53A072A1FE2ACFD00D119AC /* Article.swift */,
+				B53A072E1FE2B12900D119AC /* ModelController.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 				B53A072F1FE2B12900D119AC /* ModelController.swift in Sources */,
 				B53A07191FE2A9EE00D119AC /* DetailViewController.swift in Sources */,
 				B53A07171FE2A9EE00D119AC /* MasterViewController.swift in Sources */,
+				B541746A1FE3C9AA00842B38 /* ArticleTableViewCell.swift in Sources */,
 				B53A07151FE2A9EE00D119AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
